@@ -1,0 +1,27 @@
+header {
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 100px;
+    padding-right: 100px;
+
+    background-color: lightgray;
+}
+
+.home-link {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.home-link:hover {
+    opacity: 0.5;
+}
+
+.header-middle, .header-right {
+    display: flex;
+}
