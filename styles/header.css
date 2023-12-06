@@ -22,6 +22,33 @@ header {
     opacity: 0.5;
 }
 
-.header-middle, .header-right {
+.header-middle {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 56px;
+    margin: 0;
+    padding: 2px;
+}
+
+.header-middle .header-link-list {
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.header-middle .header-link-list:hover {
+    border-bottom: 2px solid black;
+}
+
+.header-link-list .header-link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 12px 12px 18px 12px;
+}
+
+.header-right {
     display: flex;
 }
