@@ -8,7 +8,7 @@ header {
     padding-left: 100px;
     padding-right: 100px;
 
-    background-color: lightgray;
+    background-color: white;
 }
 
 .home-link {
@@ -51,4 +51,19 @@ header {
 
 .header-right {
     display: flex;
+}
+
+.user-icon-container, .cart-icon-container {
+    border-radius: 50%;
+    margin-right: 20px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.user-icon-container:hover, .cart-icon-container:hover {
+    background-color: rgb(225, 225, 225);
+}
+
+.fa-user, .fa-bag-shopping {
+    color: black;
 }
