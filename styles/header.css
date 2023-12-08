@@ -43,6 +43,7 @@ header {
 }
 
 .header-link-list .header-link {
+    height: 100%;
     text-decoration: none;
     color: black;
     font-size: 18px;
