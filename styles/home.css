@@ -19,3 +19,25 @@
     height: 100%;
     object-fit: cover;
 }
+
+.slider-button-prev, .slider-button-next {
+    position: absolute;
+    top: 0;
+    padding: 280px 50px;
+    cursor: pointer;
+}
+
+.slider-button-prev {
+    left: 0;
+}
+
+.slider-button-next {
+    right: 0;
+}
+
+.fa-angle-left, .fa-angle-right {
+    background-color: white;
+    color: black;
+    padding: 12px 15px;
+    border-radius: 50%;
+}
