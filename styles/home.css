@@ -6,6 +6,7 @@
 .slider-wrapper {
     display: flex;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 .slide {
