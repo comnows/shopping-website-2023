@@ -11,13 +11,17 @@
     scroll-snap-type: x mandatory;
 }
 
-.slider-wrapper.dragging {
-    scroll-snap-type: none;
+.slider-wrapper.no-transition {
     scroll-behavior: auto;
 }
 
-.slider-wrapper.dragging .slide {
+.slider-wrapper.dragging {
     cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.slider-wrapper.dragging .slide {
     user-select: none;
 }
 
