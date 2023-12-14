@@ -64,7 +64,7 @@ function infiniteScroll() {
         sliderWrapper.classList.add('no-transition');
         sliderWrapper.scrollLeft = sliderWrapper.scrollWidth - (2 * sliderWrapper.offsetWidth);
         sliderWrapper.classList.remove('no-transition');
-    } else if(sliderWrapper.scrollLeft === sliderWrapper.scrollWidth - sliderWrapper.offsetWidth) {
+    } else if(Math.ceil(sliderWrapper.scrollLeft) === sliderWrapper.scrollWidth - sliderWrapper.offsetWidth) {
         sliderWrapper.classList.add('no-transition');
         sliderWrapper.scrollLeft = sliderWrapper.offsetWidth;
         sliderWrapper.classList.remove('no-transition');
