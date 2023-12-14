@@ -2,6 +2,7 @@
     width: 100%;
     position: relative;
     user-select: none;
+    margin-bottom: 50px;
 }
 
 .slider-wrapper {
@@ -75,4 +76,35 @@
     color: black;
     padding: 12px 15px;
     border-radius: 50%;
+}
+
+.welcome {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 80px;
+    max-width: 500px;
+}
+
+.welcome h2 {
+    font-size: 76px;
+    line-height: 80px;
+    margin-bottom: 24px;
+}
+
+.welcome p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-link {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 24px;
+}
+
+.shop-link:hover {
+    opacity: 0.7;
 }
