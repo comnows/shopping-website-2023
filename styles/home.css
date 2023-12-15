@@ -108,3 +108,56 @@
 .shop-link:hover {
     opacity: 0.7;
 }
+
+.trending {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.trending h3 {
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.trending-products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+}
+
+.trending-product {
+    position: relative;
+}
+
+.trending-product-img {
+    width: 100%;
+}
+
+.trending-product-info {
+    position: absolute;
+    color: white;
+    bottom: 50px;
+    left: 50px;
+}
+
+.trending-product-type {
+    font-size: 18px;
+}
+
+.trending-product-name {
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.view-product-link {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+.view-product-link:hover {
+    background-color: rgb(240, 240, 240);
+}
