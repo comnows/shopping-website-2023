@@ -164,6 +164,24 @@
     background-color: rgb(240, 240, 240);
 }
 
+.new-coming-product-slider {
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.product-slide {
+    width: 33%;
+    flex-shrink: 0;
+    margin-right: 12px;
+    scroll-snap-align: start;
+}
+
+.new-coming-product-img {
+    width: 100%;
+    max-width: 600px;
+}
+
 @media (min-width: 1920px) {
     .trending, .new-coming {
         width: 100%;
