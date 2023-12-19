@@ -70,7 +70,7 @@
     right: 0;
 }
 
-.fa-angle-left, .fa-angle-right {
+.slider-button-prev .fa-angle-left, .slider-button-next .fa-angle-right {
     background-color: white;
     color: black;
     padding: 12px 15px;
@@ -116,9 +116,12 @@
     margin-top: 80px;
 }
 
-.trending-header, .new-coming-header {
+.trending-header {
+    margin-bottom: 30px;
+}
+
+.trending-header, .new-coming-header-text {
     font-size: 26px;
-    margin-bottom: 24px;
 }
 
 .trending-products-grid {
@@ -162,6 +165,34 @@
 
 .view-product-link:hover {
     background-color: rgb(240, 240, 240);
+}
+
+.new-coming-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.new-coming-header-text {
+    display: flex;
+    align-items: center;
+    margin: 18px 0;
+}
+
+.new-coming-slider-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.new-coming-prev-button, .new-coming-next-button {
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 50%;
+    padding: 16px 20px;
+}
+
+.new-coming-next-button {
+    margin-left: 8px;
 }
 
 .new-coming-product-slider {
