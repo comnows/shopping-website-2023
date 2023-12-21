@@ -204,6 +204,14 @@
     padding-bottom: 30px;
 }
 
+.new-coming-product-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.new-coming-product-slider::-webkit-scrollbar-thumb {
+    background-color: rgb(125, 125, 125);
+}
+
 .product-slide {
     width: calc(33.4% - 12px);
     flex-shrink: 0;
