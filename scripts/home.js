@@ -6,6 +6,12 @@ const sliderChildrens = [...sliderWrapper.children];
 const sliderPrevButton = sliderContainer.querySelector('.js-slider-button-prev');
 const sliderNextButton = sliderContainer.querySelector('.js-slider-button-next');
 
+const newComingPrevButton = document.querySelector('.js-new-coming-prev-button');
+const newComingNextButton = document.querySelector('.js-new-coming-next-button');
+
+const newComingProductSlider = document.querySelector('.js-new-coming-product-slider');
+let newComingSlideWidth = newComingProductSlider.querySelector('.js-new-coming-product-slide').offsetWidth;
+
 let isMouseDown = false;
 let isDragging = false;
 let startX;
@@ -98,4 +104,28 @@ function autoSlide() {
 
 window.addEventListener('resize', () => {
     slideWidth = sliderContainer.querySelector('.slide').offsetWidth;
+});
+
+newComingPrevButton.addEventListener('click', () => {
+    const slideGap = parseInt(window.getComputedStyle(newComingProductSlider).columnGap);
+    newComingProductSlider.scrollLeft -= newComingSlideWidth + slideGap;
+});
+
+newComingNextButton.addEventListener('click', () => {
+    const slideGap = parseInt(window.getComputedStyle(newComingProductSlider).columnGap);
+    newComingProductSlider.scrollLeft += newComingSlideWidth + slideGap;
+});
+
+newComingProductSlider.addEventListener('scroll', () => {
+    if(Math.ceil(newComingProductSlider.scrollLeft) === 0) {
+        newComingPrevButton.disabled = true;
+    } else {
+        newComingPrevButton.disabled = false;
+    }
+
+    if(Math.ceil(newComingProductSlider.scrollLeft) >= newComingProductSlider.scrollWidth - newComingProductSlider.offsetWidth) {
+        newComingNextButton.disabled = true;
+    }else {
+        newComingNextButton.disabled = false;
+    }
 });

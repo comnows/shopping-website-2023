@@ -111,8 +111,8 @@
 }
 
 .trending, .new-coming {
-    padding-left: 48px;
-    padding-right: 48px;
+    margin-left: 48px;
+    margin-right: 48px;
     margin-top: 80px;
 }
 
@@ -197,20 +197,22 @@
 
 .new-coming-product-slider {
     display: flex;
-    overflow: auto;
+    column-gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    padding-bottom: 30px;
 }
 
 .product-slide {
-    width: 33%;
+    width: calc(33.4% - 12px);
     flex-shrink: 0;
-    margin-right: 12px;
     scroll-snap-align: start;
 }
 
 .new-coming-product-img {
     width: 100%;
-    max-width: 600px;
+    object-fit: cover;
 }
 
 @media (min-width: 1920px) {
