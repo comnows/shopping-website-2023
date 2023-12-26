@@ -223,6 +223,10 @@
     object-fit: cover;
 }
 
+.categories {
+    margin-bottom: 80px;
+}
+
 .categories-header {
     margin-bottom: 30px;
 }

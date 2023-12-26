@@ -1,0 +1,105 @@
+.footer {
+    background-color: black;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.get-help, .about-nowat, .promotions, .social-media {
+    /* vertical-align: top; */
+}
+
+.footer-link-header {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.footer-link-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-link, .sub-footer-link {
+    color: #7e7e7e;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.footer-link:hover, .sub-footer-link:hover {
+    color: white;
+}
+
+.social-media .footer-link-list {
+    display: flex;
+    justify-content: right;
+}
+
+.social-media .footer-link-list li {
+    margin-left: 16px;
+}
+
+.footer-social-link {
+    background-color: #7e7e7e;
+    border-radius: 50%;
+    transition: 0.25s;
+}
+
+.footer-social-link:hover {
+    background-color: white;
+}
+
+.twitter-link {
+    padding: 4.5px 7px 3.5px 7px;
+}
+
+.facebook-link {
+    padding: 4.5px 10px 3.5px 10px;
+}
+
+.youtube-link {
+    padding: 4.5px 6px 3.5px 6px;
+}
+
+.instagram-link {
+    padding: 5px 6.25px 3px 6.25px;
+}
+
+.social-icon {
+    color: black;
+}
+
+.sub-footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.copyright-text {
+    color: #7e7e7e;
+}
+
+.sub-footer-link-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.sub-footer-link {
+    margin-left: 16px;
+}
