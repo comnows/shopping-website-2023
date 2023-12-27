@@ -110,6 +110,10 @@
     opacity: 0.7;
 }
 
+.shop-link:active {
+    opacity: 0.5;
+}
+
 .trending, .new-coming, .categories {
     margin-left: 48px;
     margin-right: 48px;
@@ -140,9 +144,12 @@
 
 .trending-product-info {
     position: absolute;
-    color: white;
     bottom: 50px;
     left: 50px;
+}
+
+.trending-product-type, .trending-product-name {
+    color: white;
 }
 
 .trending-product-type {
@@ -165,6 +172,10 @@
 
 .view-product-link:hover {
     background-color: rgb(240, 240, 240);
+}
+
+.view-product-link:active {
+    background-color: rgb(220, 220, 220);
 }
 
 .new-coming-header {
@@ -218,9 +229,26 @@
     scroll-snap-align: start;
 }
 
+.product-link {
+    text-decoration: none;
+}
+
 .new-coming-product-img {
     width: 100%;
     object-fit: cover;
+}
+
+.new-coming-product-info {
+    color: black;
+}
+
+.new-coming-product-name, .new-coming-product-genre, .new-coming-product-price {
+    font-size: 18px;
+}
+
+.new-coming-product-genre {
+    color: rgb(125, 125, 125);
+    margin-bottom: 10px;
 }
 
 .categories {
