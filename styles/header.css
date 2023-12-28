@@ -1,20 +1,28 @@
 header {
     height: 60px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
 
-    padding-left: 100px;
-    padding-right: 100px;
-
     background-color: white;
+}
+
+.header-wrapper {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 40px;
+    padding-right: 20px;
 }
 
 .home-link {
@@ -26,6 +34,18 @@ header {
 
 .home-link:hover {
     opacity: 0.5;
+}
+
+.close-button {
+    display: none;
+    position: absolute;
+    right: 14px;
+    top: 8px;
+
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 10px 9.5px 8px 9.5px;
 }
 
 .header-middle {
@@ -60,17 +80,46 @@ header {
     display: flex;
 }
 
-.user-icon-container, .cart-icon-container {
+.user-icon-container, .cart-icon-container, .hamburger-icon-container {
     border-radius: 50%;
     margin-right: 20px;
     padding: 6px 8px;
     cursor: pointer;
 }
 
-.user-icon-container:hover, .cart-icon-container:hover {
+.user-icon-container:hover, .cart-icon-container:hover, .close-button:hover {
     background-color: rgb(225, 225, 225);
+}
+
+.hamburger-icon-container {
+    display: none;
 }
 
 .fa-user, .fa-bag-shopping {
     color: black;
+}
+
+@media (max-width: 960px) {
+    .header-wrapper {
+        padding-left: 18px;
+        padding-right: 0;
+    }
+
+    /* .navbar {
+        width: 320px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: white;
+        padding: 40px 36px 0 38px;
+    } */
+
+    .header-middle {
+        display: none;
+    }
+
+    .hamburger-icon-container {
+        display: unset;
+    }
 }
