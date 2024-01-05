@@ -16,10 +16,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.get-help, .about-nowat, .promotions, .social-media {
-    /* vertical-align: top; */
-}
-
 .footer-link-header {
     color: white;
     margin-bottom: 8px;
@@ -102,4 +98,49 @@
 
 .sub-footer-link {
     margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .social-media .footer-link-list {
+        justify-content: flex-start;
+    }
+
+    .social-media .footer-link-list li {
+        margin-left: 0;
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 540px) {
+    .sub-footer-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 40px;
+    }
+
+    .sub-footer-link-list {
+        padding-left: 0;
+    }
+
+    .sub-footer-link {
+        margin-left: 0;
+        margin-right: 16px;
+    }
 }
