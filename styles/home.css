@@ -306,8 +306,9 @@
 }
 
 .categories-info-name {
-    color: white;
+    color: lightgray;
     font-size: 48px;
+    text-align: center;
     font-weight: bold;
     transform: translateY(20px);
     transition: transform 0.5s;
@@ -346,6 +347,15 @@
     .trending-product-name {
         font-size: 22px;
     }
+
+    .categories-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .categories-sale {
+        grid-row: auto/auto;
+        height: 350px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -382,6 +392,10 @@
         text-decoration: none;
         font-size: 12px;
         padding: 4px 12px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -449,6 +463,15 @@
         font-size: 18px;
         padding: 6px 16px;
     }
+
+    .categories-info {
+        opacity: 1;
+    }
+
+    .categories-info-name {
+        font-size: 36px;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 540px) {
@@ -474,5 +497,14 @@
         max-width: 270px;
         font-size: 22px;
         margin-bottom: 20px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-sale, .categories-general {
+        grid-row: auto/auto;
+        height: 250px;
     }
 }
