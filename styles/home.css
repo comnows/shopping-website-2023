@@ -85,13 +85,13 @@
     margin-top: 50px;
 }
 
-.welcome h2 {
+.welcome-header {
     font-size: 76px;
     line-height: 80px;
     margin-bottom: 24px;
 }
 
-.welcome p {
+.welcome-description {
     font-size: 20px;
     margin-bottom: 20px;
     max-width: 600px;
@@ -419,7 +419,28 @@
         padding: 280px 30px;
     }
 
-    .trending, .new-coming {
+    .welcome {
+        align-items: normal;
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    .welcome-header {
+        font-size: 60px;
+        line-height: 70px;
+        margin-bottom: 24px;
+    }
+    
+    .welcome-description {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .welcome-header, .welcome-description {
+        width: calc(100% - 40px);
+    }
+
+    .trending, .new-coming, .welcome {
         padding-left: 24px;
         padding-right: 0;
     }
