@@ -419,7 +419,7 @@
         padding: 280px 30px;
     }
 
-    .trending {
+    .trending, .new-coming {
         padding-left: 24px;
         padding-right: 0;
     }
@@ -462,6 +462,11 @@
         text-decoration: none;
         font-size: 18px;
         padding: 6px 16px;
+    }
+    
+    .product-slide {
+        width: 80%;
+        min-width: 300px;
     }
 
     .categories-info {
