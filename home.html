@@ -26,8 +26,8 @@
                         <a href="/home.html" class="home-link">NOWAT</a>
                     </div>
                 </div>
-                <nav class="navbar">
-                    <button class="close-button">
+                <nav class="navbar js-navbar">
+                    <button class="close-button js-navbar-close-button">
                         <i class="fa-solid fa-xmark fa-xl"></i>
                     </button>
                     <ul class="header-middle">
@@ -58,11 +58,12 @@
                     <div class="cart-icon-container">
                         <i class="fa-solid fa-bag-shopping fa-lg"></i>
                     </div>
-                    <div class="hamburger-icon-container">
+                    <button class="hamburger-button js-hamburger-button">
                         <i class="fa-solid fa-bars fa-lg"></i>
-                    </div>
+                    </button>
                 </div>
             </div>
+            <div class="scrim js-scrim"></div>
         </header>
 
         <main>
@@ -412,6 +413,7 @@
             </div>
         </footer>
 
+        <script src="scripts/header.js"></script>
         <script type="module" src="scripts/home.js"></script>
     </body>
 </html>

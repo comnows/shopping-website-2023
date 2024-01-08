@@ -39,7 +39,7 @@ header {
 .close-button {
     display: none;
     position: absolute;
-    right: 14px;
+    right: 20px;
     top: 8px;
 
     border: none;
@@ -80,7 +80,9 @@ header {
     display: flex;
 }
 
-.user-icon-container, .cart-icon-container, .hamburger-icon-container {
+.user-icon-container, .cart-icon-container, .hamburger-button {
+    border: none;
+    background-color: transparent;
     border-radius: 50%;
     margin-right: 20px;
     padding: 6px 8px;
@@ -91,12 +93,32 @@ header {
     background-color: rgb(225, 225, 225);
 }
 
-.hamburger-icon-container {
+.hamburger-button {
     display: none;
 }
 
 .fa-user, .fa-bag-shopping {
     color: black;
+}
+
+.scrim {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0s 0.25s;
+}
+
+.scrim-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s, visibility 0s;
 }
 
 @media (max-width: 960px) {
@@ -105,21 +127,52 @@ header {
         padding-right: 0;
     }
 
-    /* .navbar {
+    .navbar {
         width: 320px;
         position: fixed;
         right: 0;
         top: 0;
         bottom: 0;
+        transform: translateX(320px);
         background-color: white;
         padding: 40px 36px 0 38px;
-    } */
-
-    .header-middle {
-        display: none;
+        z-index: 2;
+        transition: transform 0.25s;
     }
 
-    .hamburger-icon-container {
+    .navbar-show {
+        transform: translateX(0px);
+    }
+
+    .close-button {
         display: unset;
+    }
+
+    .header-middle {
+        /* display: none; */
+        flex-direction: column;
+    }
+
+    .hamburger-button {
+        display: unset;
+    }
+
+    .header-middle {
+        align-items: flex-start;
+    }
+
+    .header-middle .header-link-list {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .header-link-list .header-link {
+        width: 100%;
+        font-size: 24px;
+        padding: 12px 0 18px 0;
+    }
+
+    .header-middle .header-link-list:hover {
+        border-bottom: none;
     }
 }
