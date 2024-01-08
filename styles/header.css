@@ -80,7 +80,7 @@ header {
     display: flex;
 }
 
-.user-icon-container, .cart-icon-container, .hamburger-button {
+.user-button, .cart-button, .hamburger-button {
     border: none;
     background-color: transparent;
     border-radius: 50%;
@@ -89,7 +89,7 @@ header {
     cursor: pointer;
 }
 
-.user-icon-container:hover, .cart-icon-container:hover, .close-button:hover {
+.user-button:hover, .cart-button:hover, .close-button:hover {
     background-color: rgb(225, 225, 225);
 }
 
