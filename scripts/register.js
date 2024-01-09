@@ -15,4 +15,5 @@ loginLink.addEventListener('click', () => {
 loginCloseButton.addEventListener('click', () => {
     loginRegisterWrapper.classList.remove('active-popup');
     loginRegister.classList.remove('active-popup');
+    loginRegisterWrapper.classList.remove('active');
 })

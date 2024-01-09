@@ -4,6 +4,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
     opacity: 0;
@@ -22,6 +23,7 @@
 }
 
 .login-register-wrapper {
+    min-width: 300px;
     width: 400px;
     height: 440px;
     background: white;
@@ -35,6 +37,7 @@
     overflow: hidden;
     transform: scale(0);
     transition: transform 0.5s, height .2s ease;
+    margin: 20px;
 }
 
 .login-register-wrapper .login-close-button {
@@ -57,7 +60,7 @@
 }
 
 .login-register-wrapper.active {
-    height: 560px;
+    height: 500px;
 }
 
 .login-register-wrapper .form-box {
@@ -177,4 +180,16 @@
 
 .to-login-register p a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 425px) {
+    .login-register-wrapper .form-box {
+        padding: 20px;
+    }
+}
+
+@media (max-height: 600px) {
+    .login-register {
+        align-items: normal;
+    }
 }
