@@ -10,8 +10,11 @@ main {
 .shop-header {
     display: flex;
     align-items: flex-end;
+    position: sticky;
+    top: 55px;
     max-width: 1920px;
     padding: 16px 48px 16px;
+    background-color: white;
 }
 
 .shop-header-text {
@@ -32,6 +35,97 @@ main {
     border: none;
     font-size: 16px;
     cursor: pointer;
+}
+
+.shop-body {
+    display: flex;
+}
+
+.sidebar {
+    position: sticky;
+    width: 260px;
+    text-align: left;
+    top: 120px;
+    max-height: 50vh;
+}
+
+.sidebar-wrapper {
+    width: 240px;
+    padding-left: 48px;
+}
+
+.sidebar-categories, .sidebar-filters {
+    /* width: inherit; */
+}
+
+.sidebar-categories {
+    padding-bottom: 40px;
+}
+
+.sidebar-link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-left: 4px;
+    padding-bottom: 10px;
+}
+
+.sidebar-link, .collapsible-header p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.filter-group {
+    border-top: solid 1px rgb(210, 210, 210);
+}
+
+.collapsible {
+    padding-bottom: 20px;
+}
+
+.collapsible-header {
+    display: flex;
+    width: 98%;
+    padding: 12px 0;
+}
+
+.collapsible-header p {
+    flex: 1;
+}
+
+.option {
+    display: flex;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    border: 1.5px solid rgb(192, 192, 192);
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.checkbox .check-icon {
+    color: white;
+    font-size: 14px;
+    transform: scale(0);
+}
+
+.option.checked .checkbox {
+    background-color: black;
+    border-color: black;
+}
+
+.option.checked .check-icon {
+    transform: scale(1);
+}
+
+.options-text {
+    font-size: 18px;
 }
 
 .products-grid {
