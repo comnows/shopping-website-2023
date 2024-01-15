@@ -47,6 +47,15 @@ main {
     text-align: left;
     top: 120px;
     max-height: 50vh;
+    margin-left: -260px;
+    visibility: hidden;
+    transition: margin 0.3s, visibility 0s 0.3s;
+}
+
+.sidebar.open {
+    margin-left: 0;
+    visibility: visible;
+    transition: margin 0.3s, visibility 0s;
 }
 
 .sidebar-wrapper {
@@ -79,14 +88,29 @@ main {
     border-top: solid 1px rgb(210, 210, 210);
 }
 
-.collapsible {
-    padding-bottom: 20px;
-}
-
 .collapsible-header {
     display: flex;
+    align-items: center;
     width: 98%;
     padding: 12px 0;
+    cursor: pointer;
+}
+
+.collapsible-header.open ~ .collapsible {
+    display: block;
+}
+
+.collapsible-header .arrow-down {
+    transition: transform 0.2s;
+}
+
+.collapsible-header.open .arrow-down {
+    transform: rotate(-180deg);
+}
+
+.collapsible {
+    display: none;
+    padding-bottom: 20px;
 }
 
 .collapsible-header p {
@@ -98,7 +122,7 @@ main {
     cursor: pointer;
 }
 
-.checkbox {
+.filter-checkbox {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,15 +131,16 @@ main {
     border: 1.5px solid rgb(192, 192, 192);
     border-radius: 4px;
     margin-right: 8px;
+    transition: all 0.15s ease-in;
 }
 
-.checkbox .check-icon {
+.filter-checkbox .check-icon {
     color: white;
     font-size: 14px;
     transform: scale(0);
 }
 
-.option.checked .checkbox {
+.option.checked .filter-checkbox {
     background-color: black;
     border-color: black;
 }
