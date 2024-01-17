@@ -77,7 +77,7 @@ function renderProducts() {
     const products = filterProducts();
 
     products.forEach((product) => {
-        productsHTML = `
+        productsHTML += `
             <div class="product-preview">
                 <div class="product">
                     <a href="">
