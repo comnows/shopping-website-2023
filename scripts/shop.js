@@ -29,6 +29,7 @@ filterCheckbox.forEach((checkbox) => {
 genderCheckbox.forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
         toggleValueInArray(genderFilter, checkbox.dataset.gender);
+        localStorage.setItem('gender', JSON.stringify(genderFilter));
         renderProducts();
     });
 });
@@ -36,6 +37,7 @@ genderCheckbox.forEach((checkbox) => {
 brandCheckbox.forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
         toggleValueInArray(brandFilter, checkbox.dataset.brand);
+        localStorage.setItem('brand', JSON.stringify(genderFilter));
         renderProducts();
     });
 });
@@ -47,8 +49,38 @@ function toggleValueInArray(array, value) {
     } else {
         array.push(value);
     }
+}
 
-    console.log(array);
+function loadFiltersFromStorage() {
+    genderFilter = JSON.parse(localStorage.getItem('gender'));
+
+    if(!genderFilter) {
+        genderFilter = [];
+    }
+
+    genderFilter.forEach((gender) => {
+        if(gender === 'Men') {
+            document.querySelector('.js-men-option').classList.toggle('checked');
+        } else {
+            document.querySelector('.js-women-option').classList.toggle('checked');
+        }
+    });
+
+    brandFilter = JSON.parse(localStorage.getItem('brand'));
+
+    if(!brandFilter) {
+        brandFilter = [];
+    }
+
+    brandFilter.forEach((brand) => {
+        if(brand === 'Adidas') {
+            document.querySelector('.js-adidas-option').classList.toggle('checked');
+        } else {
+            document.querySelector('.js-nike-option').classList.toggle('checked');
+        }
+    });
+
+    renderProducts();
 }
 
 function filterProducts() {
@@ -102,4 +134,4 @@ function renderProducts() {
     document.querySelector('.products-grid').innerHTML = productsHTML;
 }
 
-renderProducts();
+loadFiltersFromStorage();
