@@ -2,6 +2,7 @@ export const products = [
     {
         id: "product_001",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Football Jersey",
@@ -12,6 +13,7 @@ export const products = [
     {
         id: "product_002",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Football Jersey",
@@ -22,6 +24,7 @@ export const products = [
     {
         id: "product_003",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Shoes",
@@ -32,6 +35,7 @@ export const products = [
     {
         id: "product_004",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Football Jersey",
@@ -42,6 +46,7 @@ export const products = [
     {
         id: "product_005",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Shoes",
@@ -52,6 +57,7 @@ export const products = [
     {
         id: "product_006",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Women",
         genre: "Women's Shoes",
@@ -62,6 +68,7 @@ export const products = [
     {
         id: "product_007",
         category: "Accessories",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Women",
         genre: "Women's Apex Bucket Hat",
@@ -72,6 +79,7 @@ export const products = [
     {
         id: "product_008",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Women",
         genre: "Women's Shoes",
@@ -82,6 +90,7 @@ export const products = [
     {
         id: "product_009",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Men",
         genre: "Men's Football Jersey",
@@ -92,6 +101,7 @@ export const products = [
     {
         id: "product_010",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Women",
         genre: "Women's Football Jersey",
@@ -102,6 +112,7 @@ export const products = [
     {
         id: "product_011",
         category: "Accessories",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Women",
         genre: "Dri-FIT ADV Cushioned Crew Socks",
@@ -112,6 +123,7 @@ export const products = [
     {
         id: "product_012",
         category: "Shorts",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Shorts",
@@ -122,6 +134,7 @@ export const products = [
     {
         id: "product_013",
         category: "Shorts",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Women",
         genre: "Women's Shorts",
@@ -131,7 +144,8 @@ export const products = [
     },
     {
         id: "product_014",
-        category: "Shorts",
+        category: "Shoes",
+        ages: 'Kids',
         brand: "Adidas",
         gender: "Women",
         genre: "Kids Shoes",
@@ -142,6 +156,7 @@ export const products = [
     {
         id: "product_015",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Shoes",
@@ -152,6 +167,7 @@ export const products = [
     {
         id: "product_016",
         category: "Shoes",
+        ages: 'Kids',
         brand: "Nike",
         gender: "Men",
         genre: "Big Kids Shoes",
@@ -162,6 +178,7 @@ export const products = [
     {
         id: "product_017",
         category: "Shorts",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Men",
         genre: "Men's Shorts",
@@ -172,16 +189,18 @@ export const products = [
     {
         id: "product_018",
         category: "Accessories",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Men",
         genre: "Structured Nike Dri-FIT ADV Club Cap",
         name: "Nike X Tiger Woods Cap",
-        image: "images/products/shoes/air-jordan-1-high-og-big-kids-shoes.png",
+        image: "images/products/accessories/tiger-woods-structured-dri-fit-adv-club-cap.png",
         price: 990
     },
     {
         id: "product_019",
         category: "Shorts",
+        ages: 'Adult',
         brand: "Nike",
         gender: "Men",
         genre: "Men's Shorts",
@@ -192,6 +211,7 @@ export const products = [
     {
         id: "product_020",
         category: "Cloths",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Women",
         genre: "Women's Shirts",
@@ -202,6 +222,7 @@ export const products = [
     {
         id: "product_021",
         category: "Cloths",
+        ages: 'Kids',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Shirts",
@@ -213,6 +234,7 @@ export const products = [
     {
         id: "product_022",
         category: "Shorts",
+        ages: 'Kids',
         brand: "Nike",
         gender: "Women",
         genre: "Toddler Joggers",
@@ -223,6 +245,7 @@ export const products = [
     {
         id: "product_023",
         category: "Accessories",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
         genre: "Men's Bottles",
@@ -233,6 +256,7 @@ export const products = [
     {
         id: "product_024",
         category: "Accessories",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Women",
         genre: "Women's Shirts",
@@ -243,11 +267,23 @@ export const products = [
     {
         id: "product_025",
         category: "Shoes",
+        ages: 'Adult',
         brand: "Adidas",
         gender: "Women",
         genre: "Women's Shoes",
         name: "Adidas Switch Run Running Shoes",
         image: "images/products/shoes/adidas_Switch_Run_Running_Shoes_Purple.jpg",
         price: 3200
+    },
+    {
+        id: "product_026",
+        category: "Accessories",
+        ages: 'Kids',
+        brand: "Nike",
+        gender: "Men",
+        genre: "Kids Single Web Golf Belt",
+        name: "Nike Futura",
+        image: "images/products/accessories/futura-kids-single-web-golf-belt.png",
+        price: 590
     }
 ];

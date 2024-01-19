@@ -2,6 +2,7 @@ import { products } from "../data/products.js";
 
 const filterButton = document.querySelector('.filter-button');
 const sidebar = document.querySelector('.sidebar');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
 const collapsibleHeader = document.querySelectorAll('.collapsible-header');
 const filterCheckbox = document.querySelectorAll('.option');
 const genderCheckbox = document.querySelectorAll('.js-gender-option');
@@ -9,6 +10,21 @@ const brandCheckbox = document.querySelectorAll('.js-brand-option');
 
 let genderFilter = [];
 let brandFilter = [];
+
+function addSidebarKidsLink() {
+    let url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+
+    if(params.get('ages')) {
+        sidebarLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                window.location.href = "shop.html?categories=" + link.dataset.categories + "&ages=Kids";
+            });
+        });
+    }
+}
 
 filterButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');
@@ -37,7 +53,7 @@ genderCheckbox.forEach((checkbox) => {
 brandCheckbox.forEach((checkbox) => {
     checkbox.addEventListener('click', () => {
         toggleValueInArray(brandFilter, checkbox.dataset.brand);
-        localStorage.setItem('brand', JSON.stringify(genderFilter));
+        localStorage.setItem('brand', JSON.stringify(brandFilter));
         renderProducts();
     });
 });
@@ -49,6 +65,8 @@ function toggleValueInArray(array, value) {
     } else {
         array.push(value);
     }
+
+    console.log(array);
 }
 
 function loadFiltersFromStorage() {
@@ -84,14 +102,30 @@ function loadFiltersFromStorage() {
 }
 
 function filterProducts() {
-    let filterProducts;
+    let filterProducts = products;
+
+    let url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+
+    let categories = params.get('categories');
+    let ages = params.get('ages');
+
+    if(categories){
+        filterProducts = filterProducts.filter((product) => {
+            return product.category === categories;
+        });
+    }
+
+    if(ages) {
+        filterProducts = filterProducts.filter((product) => {
+            return product.ages === ages;
+        });
+    }
 
     if(genderFilter.length > 0) {
-        filterProducts = products.filter((product) => {
+        filterProducts = filterProducts.filter((product) => {
             return genderFilter.includes(product.gender);
         });
-    } else {
-        filterProducts = products;
     }
     
     if(brandFilter.length > 0) {
@@ -106,9 +140,9 @@ function filterProducts() {
 function renderProducts() {
     let productsHTML = '';
 
-    const products = filterProducts();
+    const productsData = filterProducts();
 
-    products.forEach((product) => {
+    productsData.forEach((product) => {
         productsHTML += `
             <div class="product-preview">
                 <div class="product">
@@ -134,4 +168,5 @@ function renderProducts() {
     document.querySelector('.products-grid').innerHTML = productsHTML;
 }
 
+addSidebarKidsLink();
 loadFiltersFromStorage();
