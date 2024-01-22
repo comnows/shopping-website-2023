@@ -2,6 +2,7 @@ import { products } from "../data/products.js";
 
 const filterButton = document.querySelector('.filter-button');
 const sidebar = document.querySelector('.sidebar');
+const sidebarCloseButton = document.querySelector('.sidebar-close-button');
 const sidebarLinks = document.querySelectorAll('.sidebar-link');
 const collapsibleHeader = document.querySelectorAll('.collapsible-header');
 const filterCheckbox = document.querySelectorAll('.option');
@@ -27,7 +28,15 @@ function addSidebarKidsLink() {
 }
 
 filterButton.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
+    if(window.innerWidth > 960) {
+        sidebar.classList.toggle('open');
+    } else {
+        sidebar.classList.add('sidebar-show');
+    }
+});
+
+sidebarCloseButton.addEventListener('click', () => {
+    sidebar.classList.remove('sidebar-show');
 });
 
 collapsibleHeader.forEach((button) => {
@@ -145,22 +154,22 @@ function renderProducts() {
     productsData.forEach((product) => {
         productsHTML += `
             <div class="product-preview">
-                <div class="product">
-                    <a href="">
+                <a href="product.html?productId=${product.id}">
+                    <div class="product">
                         <img class="product-image" src="${product.image}" alt="">
-                    </a>
-                </div>
-                <div class="product-info">
-                    <p class="product-name">
-                        ${product.name}
-                    </p>
-                    <p class="product-genre">
-                        ${product.genre}
-                    </p>
-                    <p class="product-price">
-                        &#3647;${product.price}
-                    </p>
-                </div>
+                    </div>
+                        <div class="product-info">
+                        <p class="product-name">
+                            ${product.name}
+                        </p>
+                        <p class="product-genre">
+                            ${product.genre}
+                        </p>
+                        <p class="product-price">
+                            &#3647;${product.price}
+                        </p>
+                    </div>
+                </a>
             </div>
         `;
     });
