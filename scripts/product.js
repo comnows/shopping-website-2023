@@ -29,7 +29,7 @@ function renderProduct() {
                 <div class="product-size-header">
                     Size (US)
                 </div>
-                <div class="product-size-grid">
+                <div class="product-size-grid ${matchingProduct.category.toLocaleLowerCase()}">
                     
                 </div>
             </div>

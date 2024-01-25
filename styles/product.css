@@ -12,7 +12,7 @@ main {
     flex: 2;
     height: 100%;
     text-align: center;
-    padding: 0px 60px 0px 24px;
+    padding-left: 24px;
 }
 
 .product-image img {
@@ -24,6 +24,8 @@ main {
 
 .product-info {
     flex: 1;
+    padding-left: 24px;
+    padding-right: 48px;
 }
 
 .product-name {
@@ -51,6 +53,12 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+}
+
+.product-size-grid.shirts,
+.product-size-grid.shorts,
+.product-size-grid.accessories {
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .product-size-option input[type="radio"] {
@@ -124,4 +132,19 @@ main {
 .product-details {
     font-size: 18px;
     margin-top: 40px;
+}
+
+@media (max-width: 960px) {
+    .product-container {
+        display: block;
+    }
+
+    .product-image {
+        padding: 0;
+    }
+
+    .product-info {
+        margin-top: 48px;
+        padding: 0 16px;
+    }
 }
