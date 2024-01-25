@@ -1,4 +1,16 @@
-const productSizes = [
+export function getSize(category) {
+    let matchingSize;
+
+    productSizes.forEach((size) => {
+        if (category === size.category) {
+            matchingSize = size.sizes;
+        }
+    });
+
+    return matchingSize;
+}
+
+export const productSizes = [
     {
         category: "Shirts",
         sizes: [

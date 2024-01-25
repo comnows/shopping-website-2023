@@ -1,4 +1,5 @@
 import { getProduct } from "../data/products.js";
+import { getSize } from "../data/sizes.js";
 
 function renderProduct() {
     let url = new URL(window.location.href);
@@ -29,78 +30,7 @@ function renderProduct() {
                     Size (US)
                 </div>
                 <div class="product-size-grid">
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-5-w-6-5">
-                        <label for="m-5-w-6-5">
-                            M 5 / W 6.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-5-5-w-7">
-                        <label for="m-5-5-w-7">
-                            M 5.5 / W 7
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-6-w-7-5">
-                        <label for="m-6-w-7-5">
-                            M 6 / W 7.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-6-5-w-8">
-                        <label for="m-6-5-w-8">
-                            M 6.5 / W 8
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-7-w-8-5">
-                        <label for="m-7-w-8-5">
-                            M 7 / W 8.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-7-5-w-9">
-                        <label for="m-7-5-w-9">
-                            M 7.5 / W 9
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-8-w-9-5">
-                        <label for="m-8-w-9-5">
-                            M 8 / W 9.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-8-5-w-10">
-                        <label for="m-8-5-w-10">
-                            M 8.5 / W 10
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-9-w-10-5">
-                        <label for="m-9-w-10-5">
-                            M 9 / W 10.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-9-5-w-11">
-                        <label for="m-9-5-w-11">
-                            M 9.5 / W 11
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-10-w-11-5">
-                        <label for="m-10-w-11-5">
-                            M 10 / W 11.5
-                        </label>
-                    </div>
-                    <div class="product-size-option">
-                        <input type="radio" name="size" id="m-10-5-w-12">
-                        <label for="m-10-5-w-12">
-                            M 10.5 / W 12
-                        </label>
-                    </div>
+                    
                 </div>
             </div>
             <div class="product-quantity">
@@ -122,6 +52,23 @@ function renderProduct() {
     `;
 
     document.querySelector('.product-container').innerHTML = productHtml;
+    
+    const matchingSize = getSize(matchingProduct.category);
+
+    let sizeHtml = '';
+    
+    matchingSize.forEach((size) => {
+        sizeHtml += `
+            <div class="product-size-option">
+                <input type="radio" name="size" id="${size.sizeId}">
+                <label for="${size.sizeId}">
+                    ${size.name}
+                </label>
+            </div>
+        `;
+    });
+
+    document.querySelector('.product-size-grid').innerHTML = sizeHtml;
 
     const productQuantityInput = document.querySelector('.product-quantity-input');
 
