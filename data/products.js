@@ -8,7 +8,7 @@ export function getProduct(productId) {
     });
 
     if(!matchingProduct) {
-        matchingProduct = products[20];
+        matchingProduct = products[0];
     }
 
     return matchingProduct;
@@ -17,7 +17,7 @@ export function getProduct(productId) {
 export const products = [
     {
         id: "product_001",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
@@ -28,7 +28,7 @@ export const products = [
     },
     {
         id: "product_002",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
@@ -50,7 +50,7 @@ export const products = [
     },
     {
         id: "product_004",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Adidas",
         gender: "Men",
@@ -105,7 +105,7 @@ export const products = [
     },
     {
         id: "product_009",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Nike",
         gender: "Men",
@@ -116,7 +116,7 @@ export const products = [
     },
     {
         id: "product_010",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Nike",
         gender: "Women",
@@ -226,7 +226,7 @@ export const products = [
     },
     {
         id: "product_020",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Adult',
         brand: "Adidas",
         gender: "Women",
@@ -237,7 +237,7 @@ export const products = [
     },
     {
         id: "product_021",
-        category: "Cloths",
+        category: "Shirts",
         ages: 'Kids',
         brand: "Adidas",
         gender: "Men",
