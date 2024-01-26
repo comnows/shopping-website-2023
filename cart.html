@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Nowat</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/5af8ab3676.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/register.css">
+        <link rel="stylesheet" href="styles/cart.css">
+        <link rel="stylesheet" href="styles/footer.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-wrapper">
+                <div class="header-left">
+                    <div class="logo-container">
+                        <a href="/home.html" class="home-link">NOWAT</a>
+                    </div>
+                </div>
+                <nav class="navbar js-navbar">
+                    <button class="close-button js-navbar-close-button">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <ul class="header-middle">
+                        <li class="header-link-list">
+                            <a href="shop.html" class="header-link">New & Featured</a>
+                        </li>
+                        <li class="header-link-list">
+                            <a href="shop.html?categories=Men" class="header-link js-gender-header-link" data-gender-categories="Men">Men</a>
+                        </li>
+                        <li class="header-link-list">
+                            <a href="shop.html?categories=Women" class="header-link js-gender-header-link" data-gender-categories="Women">Women</a>
+                        </li>
+                        <li class="header-link-list">
+                            <a href="shop.html?ages=Kids" class="header-link">Kids</a>
+                        </li>
+                        <li class="header-link-list">
+                            <a href="shop.html?categories=Accessories" class="header-link">Accessories</a>
+                        </li>
+                        <li class="header-link-list">
+                            <a href="" class="header-link">Sale</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="user-button js-user-button">
+                        <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+                    <button class="cart-button">
+                        <i class="fa-solid fa-bag-shopping fa-lg"></i>
+                    </button>
+                    <button class="hamburger-button js-hamburger-button">
+                        <i class="fa-solid fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="scrim js-scrim"></div>
+        </header>
+        
+        <section class="login-register">
+            <div class="login-register-wrapper">
+                <button class="login-close-button js-login-close-button">
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </button>
+                <div class="form-box login">
+                    <h2>Login</h2>
+                    <form action="#" class="input-box-grid">
+                        <div class="input-box">
+                            <span class="input-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <input type="email" required>
+                            <label for="">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="input-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <input type="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label for="">
+                                <input type="checkbox">
+                                Stayed login
+                            </label>
+                            <a href="#">
+                                Forgot Password?
+                            </a>
+                        </div>
+                        <button type="submit" class="login-button">Login</button>
+                        <div class="to-login-register">
+                            <p>
+                                Don't have any account?
+                                <a href="#" class="register-link">Register</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-box register">
+                    <h2>Register</h2>
+                    <form action="#" class="input-box-grid">
+                        <div class="input-box">
+                            <span class="input-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input type="text" required>
+                            <label for="">Name</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="input-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <input type="email" required>
+                            <label for="">Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="input-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </span>
+                            <input type="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label for="">
+                                <input type="checkbox">
+                                I agree to the terms & conditions
+                            </label>
+                        </div>
+                        <button type="submit" class="login-button">Register</button>
+                        <div class="to-login-register">
+                            <p>
+                                Already have any account?
+                                <a href="#" class="login-link">Login</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <div class="cart-grid">
+                <div class="cart-container">
+                    <div class="cart-container-header">
+                        Cart
+                    </div>
+                    <div class="cart-items-container">
+                        <div class="cart-item">
+                            <div class="product-image">
+                                <img src="images/index/popular/popular-arsenal-ian-wright.webp" alt="">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">
+                                    Adidas Arsenal x Ian Wright Pre-Match Jersey
+                                </p>
+                                <p class="product-size">
+                                    Size: L
+                                </p>
+                            </div>
+                            <div class="product-quantity">
+                                <span class="decrease">
+                                    -
+                                </span>
+                                <input type="text" id="" class="product-quantity-input" value="1" min="1" max="20">
+                                <span class="increase">
+                                    +
+                                </span>
+                            </div>
+                            <div class="product-total">
+                                &#3647;2200
+                            </div>
+                            <div class="product-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item">
+                            <div class="product-image">
+                                <img src="images/index/popular/popular-arsenal-ian-wright.webp" alt="">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">
+                                    Adidas Arsenal x Ian Wright Pre-Match Jersey
+                                </p>
+                                <p class="product-size">
+                                    Size: L
+                                </p>
+                            </div>
+                            <div class="product-quantity">
+                                <span class="decrease">
+                                    -
+                                </span>
+                                <input type="text" id="" class="product-quantity-input" value="1" min="1" max="20">
+                                <span class="increase">
+                                    +
+                                </span>
+                            </div>
+                            <div class="product-total">
+                                &#3647;2200
+                            </div>
+                            <div class="product-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                        <div class="cart-item">
+                            <div class="product-image">
+                                <img src="images/index/popular/popular-arsenal-ian-wright.webp" alt="">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-name">
+                                    Adidas Arsenal x Ian Wright Pre-Match Jersey
+                                </p>
+                                <p class="product-size">
+                                    Size: L
+                                </p>
+                            </div>
+                            <div class="product-quantity">
+                                <span class="decrease">
+                                    -
+                                </span>
+                                <input type="text" id="" class="product-quantity-input" value="1" min="1" max="20">
+                                <span class="increase">
+                                    +
+                                </span>
+                            </div>
+                            <div class="product-total">
+                                &#3647;2200
+                            </div>
+                            <div class="product-delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-summary">
+                    <div class="payment-summary-title">
+                        Order Summary
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>
+                            Items (2):
+                        </div>
+                        <div class="payment-summary-money">
+                            &#3647;2200
+                        </div>
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>
+                            Shipping & handling:
+                        </div>
+                        <div class="payment-summary-money">
+                            &#3647;2200
+                        </div>
+                    </div>
+                    <div class="payment-summary-row subtotal-row">
+                        <div>
+                            Total before tax:
+                        </div>
+                        <div class="payment-summary-money">
+                            &#3647;2200
+                        </div>
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>
+                            Estimated tax (10%):
+                        </div>
+                        <div class="payment-summary-money">
+                            &#3647;2200
+                        </div>
+                    </div>
+                    <div class="payment-summary-row total-row">
+                        <div>
+                            Total:
+                        </div>
+                        <div class="payment-summary-money">
+                            &#3647;2200
+                        </div>
+                    </div>
+                    <button class="checkout-button">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="get-help">
+                        <h4 class="footer-link-header">GET HELP</h4>
+                        <ul class="footer-link-list">
+                            <li>
+                                <a href="" class="footer-link">Order Status</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Shipping and Delivery</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Returns</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Order Cancellation</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Payment Options</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-nowat">
+                        <h4 class="footer-link-header">ABOUT NOWAT</h4>
+                        <ul class="footer-link-list">
+                            <li>
+                                <a href="" class="footer-link">News</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Careers</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Purpose</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Stories</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="promotions">
+                        <h4 class="footer-link-header">PROMOTIONS & DISCOUNTS</h4>
+                        <ul class="footer-link-list">
+                            <li>
+                                <a href="" class="footer-link">Festival</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Members</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Student</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-link">Birthday</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-media">
+                        <ul class="footer-link-list">
+                            <li>
+                                <a href="" class="footer-social-link twitter-link">
+                                    <i class="fa-brands fa-x-twitter social-icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-social-link facebook-link">
+                                    <i class="fa-brands fa-facebook-f social-icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-social-link youtube-link">
+                                    <i class="fa-brands fa-youtube social-icon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="footer-social-link instagram-link">
+                                    <i class="fa-brands fa-instagram fa-lg social-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sub-footer-container">
+                    <div>
+                        <p class="copyright-text">&#169; 2023 Nowat, Inc. All Rights Reserved</p>
+                    </div>
+                    <div>
+                        <ul class="sub-footer-link-list">
+                            <li>
+                                <a href="" class="sub-footer-link">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="" class="sub-footer-link">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="module" src="scripts/header.js"></script>
+        <script type="module" src="scripts/register.js"></script>
+    </body>
+</html>
