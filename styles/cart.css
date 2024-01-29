@@ -88,11 +88,11 @@ main {
 }
 
 .product-delete .fa-trash:hover {
-    color: rgb(60, 60, 60);
+    color: rgb(235, 0, 0);
 }
 
 .product-delete .fa-trash:active {
-    color: rgb(90, 90, 90);
+    color: rgb(195, 0, 0);
 }
 
 .payment-summary {

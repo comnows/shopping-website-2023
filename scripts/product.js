@@ -1,5 +1,7 @@
+import { updateQuantity } from "../data/cart.js";
 import { getProduct } from "../data/products.js";
 import { getSize } from "../data/sizes.js";
+import { renderOrderSummary } from "./orderSummary.js";
 
 function renderProduct() {
     let url = new URL(window.location.href);
@@ -75,13 +77,15 @@ function renderProduct() {
     productQuantityInput.addEventListener('change', () => {
         const inputValue = parseFloat(productQuantityInput.value);
 
-        if(isNaN(inputValue) || typeof(inputValue) !== 'number' || inputValue < 1) {
-            productQuantityInput.value = 1;
-        } else if(inputValue > 20) {
-            productQuantityInput.value = 20;
+        if(isNaN(inputValue) || typeof(inputValue) !== 'number' || inputValue < 1 || inputValue > 20) {
+            alert('Quantity must be at least 1 and less than 20');
+            return;
         } else if(inputValue % 1 !== 0) {
-            productQuantityInput.value = Math.round(inputValue);
+            inputValue = Math.round(inputValue);
         }
+
+        updateQuantity(productId, inputValue);
+        renderOrderSummary();
     });
 
     const quantityDecrease = document.querySelector('.decrease');
@@ -101,7 +105,7 @@ function renderProduct() {
         if(productQuantityInput.value > 20) {
             productQuantityInput.value = 20;
         }
-    })
+    });
 }
 
 renderProduct();
