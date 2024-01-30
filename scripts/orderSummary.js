@@ -1,47 +1,56 @@
 import { cart, updateQuantity, removeFromCart } from "../data/cart.js";
 import { getProduct } from "../data/products.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
     let cartSummaryHTML = '';
 
-    cart.forEach((cartItem) => {
-        const productId = cartItem.productId;
-        const matchingProduct = getProduct(productId);
-
-        cartSummaryHTML += `
-            <div class="cart-item">
-                <div class="product-image">
-                    <img src="${matchingProduct.image}" alt="">
-                </div>
-                <div class="product-info">
-                    <p class="product-name">
-                        ${matchingProduct.name}
-                    </p>
-                    <p class="product-size">
-                        Size: ${cartItem.size.name}
-                    </p>
-                    <div class="product-total-small">
-                        &#3647;${matchingProduct.price}
-                    </div>
-                </div>
-                <div class="product-quantity">
-                    <span class="decrease js-decrease-button" data-product-id="${productId}-${cartItem.size.id}">
-                        -
-                    </span>
-                    <input type="text" class="product-quantity-input js-quantity-input" data-product-id="${productId}-${cartItem.size.id}" value="${cartItem.quantity}" min="1" max="20"">
-                    <span class="increase js-increase-button" data-product-id="${productId}-${cartItem.size.id}">
-                        +
-                    </span>
-                </div>
-                <div class="product-total">
-                    &#3647;${matchingProduct.price}
-                </div>
-                <div class="product-delete js-product-delete" data-product-id="${productId}-${cartItem.size.id}">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
+    if (cart.length === 0) {
+        cartSummaryHTML = `
+            <div class="no-item">
+                There are no items in your cart.
             </div>
         `;
-    });
+    } else {
+        cart.forEach((cartItem) => {
+            const productId = cartItem.productId;
+            const matchingProduct = getProduct(productId);
+
+            cartSummaryHTML += `
+                <div class="cart-item">
+                    <div class="product-image">
+                        <img src="${matchingProduct.image}" alt="">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-name">
+                            ${matchingProduct.name}
+                        </p>
+                        <p class="product-size">
+                            Size: ${cartItem.size.name}
+                        </p>
+                        <div class="product-total-small">
+                            &#3647;${matchingProduct.price}
+                        </div>
+                    </div>
+                    <div class="product-quantity">
+                        <span class="decrease js-decrease-button" data-product-id="${productId}-${cartItem.size.id}">
+                            -
+                        </span>
+                        <input type="text" class="product-quantity-input js-quantity-input" data-product-id="${productId}-${cartItem.size.id}" value="${cartItem.quantity}" min="1" max="20"">
+                        <span class="increase js-increase-button" data-product-id="${productId}-${cartItem.size.id}">
+                            +
+                        </span>
+                    </div>
+                    <div class="product-total">
+                        &#3647;${matchingProduct.price}
+                    </div>
+                    <div class="product-delete js-product-delete" data-product-id="${productId}-${cartItem.size.id}">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            `;
+        });
+    }
 
     document.querySelector('.cart-items-container').innerHTML = cartSummaryHTML;
 
@@ -61,6 +70,7 @@ export function renderOrderSummary() {
 
             updateQuantity(productId, inputValue);
             renderOrderSummary();
+            renderPaymentSummary();
         });
     });
 
@@ -81,6 +91,7 @@ export function renderOrderSummary() {
 
             updateQuantity(productId, newQuantity);
             renderOrderSummary();
+            renderPaymentSummary();
         });
     });
 
@@ -101,6 +112,7 @@ export function renderOrderSummary() {
 
             updateQuantity(productId, newQuantity);
             renderOrderSummary();
+            renderPaymentSummary();
         });
     });
 
@@ -110,6 +122,7 @@ export function renderOrderSummary() {
 
             removeFromCart(productId);
             renderOrderSummary();
+            renderPaymentSummary();
         });
     });
 }
