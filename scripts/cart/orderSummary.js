@@ -1,5 +1,5 @@
-import { cart, updateQuantity, removeFromCart } from "../data/cart.js";
-import { getProduct } from "../data/products.js";
+import { cart, updateQuantity, removeFromCart } from "../../data/cart.js";
+import { getProduct } from "../../data/products.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
@@ -126,5 +126,3 @@ export function renderOrderSummary() {
         });
     });
 }
-
-renderOrderSummary();
