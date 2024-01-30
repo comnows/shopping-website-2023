@@ -1,13 +1,13 @@
-import { updateQuantity } from "../data/cart.js";
+import { addToCart } from "../data/cart.js";
 import { getProduct } from "../data/products.js";
 import { getSize } from "../data/sizes.js";
-import { renderOrderSummary } from "./orderSummary.js";
 
 function renderProduct() {
     let url = new URL(window.location.href);
     let params = new URLSearchParams(url.search);
 
-    const productId = params.get('productId');
+    const productId = params.get('productId') || 'product_001';
+    console.log(productId);
 
     const matchingProduct = getProduct(productId);
 
@@ -62,7 +62,7 @@ function renderProduct() {
     matchingSize.forEach((size) => {
         sizeHtml += `
             <div class="product-size-option">
-                <input type="radio" name="size" id="${size.sizeId}">
+                <input type="radio" name="size" id="${size.sizeId}" value="${size.name}" data-size-id="${size.sizeId}">
                 <label for="${size.sizeId}">
                     ${size.name}
                 </label>
@@ -77,15 +77,15 @@ function renderProduct() {
     productQuantityInput.addEventListener('change', () => {
         const inputValue = parseFloat(productQuantityInput.value);
 
-        if(isNaN(inputValue) || typeof(inputValue) !== 'number' || inputValue < 1 || inputValue > 20) {
+        if(isNaN(inputValue) || typeof(inputValue) !== 'number' || inputValue < 1) {
             alert('Quantity must be at least 1 and less than 20');
+            productQuantityInput.value = 1;
             return;
+        } else if (inputValue > 20) {
+            productQuantityInput.value = 20;
         } else if(inputValue % 1 !== 0) {
             inputValue = Math.round(inputValue);
         }
-
-        updateQuantity(productId, inputValue);
-        renderOrderSummary();
     });
 
     const quantityDecrease = document.querySelector('.decrease');
@@ -105,6 +105,14 @@ function renderProduct() {
         if(productQuantityInput.value > 20) {
             productQuantityInput.value = 20;
         }
+    });
+
+    document.querySelector(".add-to-cart-button").addEventListener('click', () => {
+        const selectedSize = document.querySelector('input[name="size"]:checked');
+        const sizeName = selectedSize.value;
+        const sizeId = selectedSize.dataset.sizeId;
+
+        addToCart(productId, sizeName, sizeId, productQuantityInput.value);
     });
 }
 

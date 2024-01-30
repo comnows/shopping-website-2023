@@ -18,7 +18,7 @@ export function renderOrderSummary() {
                         ${matchingProduct.name}
                     </p>
                     <p class="product-size">
-                        Size: ${cartItem.size}
+                        Size: ${cartItem.size.name}
                     </p>
                     <div class="product-total-small">
                         &#3647;${matchingProduct.price}
@@ -52,6 +52,7 @@ export function renderOrderSummary() {
             let inputValue = parseFloat(input.value);
     
             if(isNaN(inputValue) || typeof(inputValue) !== 'number' || inputValue < 1 || inputValue > 20) {
+                renderOrderSummary();
                 alert('Quantity must be at least 1 and less than 20');
                 return;
             } else if(inputValue % 1 !== 0) {

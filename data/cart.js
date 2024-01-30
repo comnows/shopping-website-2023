@@ -21,6 +21,32 @@ if (!cart) {
     ];
 }
 
+export function addToCart(productId, sizeName, sizeId, quantity) {
+    let matchingProduct;
+
+    cart.forEach((cartItem) => {
+        if (`${cartItem.productId}-${cartItem.size.id}` === `${productId}-${sizeId}`) {
+            matchingProduct = cartItem;
+        }
+    });
+
+    if (matchingProduct) {
+        matchingProduct.quantity += Number(quantity);
+    } else {
+        cart.push({
+            productId: productId,
+            size: {
+                name: sizeName,
+                id: sizeId
+            },
+            quantity: Number(quantity)
+        });
+    }
+
+    saveToStorage();
+    console.log(cart);
+}
+
 export function removeFromCart(productId) {
     const newCart = [];
 
