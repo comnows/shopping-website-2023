@@ -1,6 +1,7 @@
 import { cart, updateQuantity, removeFromCart } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import { updateHeaderCartQuantity } from "../header.js";
 
 export function renderOrderSummary() {
     let cartSummaryHTML = '';
@@ -69,6 +70,7 @@ export function renderOrderSummary() {
             }
 
             updateQuantity(productId, inputValue);
+            updateHeaderCartQuantity();
             renderOrderSummary();
             renderPaymentSummary();
         });
@@ -90,6 +92,7 @@ export function renderOrderSummary() {
             const newQuantity = matchingProduct.quantity - 1;
 
             updateQuantity(productId, newQuantity);
+            updateHeaderCartQuantity();
             renderOrderSummary();
             renderPaymentSummary();
         });
@@ -111,6 +114,7 @@ export function renderOrderSummary() {
             const newQuantity = matchingProduct.quantity + 1;
 
             updateQuantity(productId, newQuantity);
+            updateHeaderCartQuantity();
             renderOrderSummary();
             renderPaymentSummary();
         });
@@ -121,6 +125,7 @@ export function renderOrderSummary() {
             const productId = button.dataset.productId;
 
             removeFromCart(productId);
+            updateHeaderCartQuantity();
             renderOrderSummary();
             renderPaymentSummary();
         });

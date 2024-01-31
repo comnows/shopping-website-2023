@@ -1,3 +1,5 @@
+import { calculateCartQuantity } from "../data/cart.js";
+
 const hamburgerButton = document.querySelector('.js-hamburger-button');
 const navbar = document.querySelector('.js-navbar');
 const navbarCloseButton = navbar.querySelector('.js-navbar-close-button');
@@ -36,3 +38,11 @@ genderLink.forEach((link) => {
         window.location.href = "shop.html";
     });
 });
+
+export function updateHeaderCartQuantity() {
+    const itemsCount = calculateCartQuantity();
+
+    document.querySelector('.cart-items-count').innerHTML = itemsCount;
+}
+
+updateHeaderCartQuantity();

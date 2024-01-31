@@ -1,6 +1,7 @@
 import { addToCart } from "../data/cart.js";
 import { getProduct } from "../data/products.js";
 import { getSize } from "../data/sizes.js";
+import { updateHeaderCartQuantity } from "./header.js";
 
 function renderProduct() {
     let url = new URL(window.location.href);
@@ -109,10 +110,17 @@ function renderProduct() {
 
     document.querySelector(".add-to-cart-button").addEventListener('click', () => {
         const selectedSize = document.querySelector('input[name="size"]:checked');
+
+        if (!selectedSize) {
+            alert("Please select your size...");
+            return;
+        }
+
         const sizeName = selectedSize.value;
         const sizeId = selectedSize.dataset.sizeId;
 
         addToCart(productId, sizeName, sizeId, productQuantityInput.value);
+        updateHeaderCartQuantity();
     });
 }
 
