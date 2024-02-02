@@ -1,0 +1,66 @@
+.map-container {
+    width: 100%;
+    height: 500px;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px auto 80px auto;
+}
+
+.contact-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-subtitle {
+    display: flex;
+    gap: 8px;
+}
+
+.contact-subtitle-name {
+    font-weight: 700;
+}
+
+.get-in-touch-details {
+    margin-bottom: 20px;
+}
+
+.get-in-touch-form input, .get-in-touch-form textarea {
+    border: 1px solid rgb(200, 200, 200);
+    outline: none;
+    padding: 6px 8px;
+    margin-bottom: 16px;
+}
+
+.fullname-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.get-in-touch-input, .problem-input {
+    width: 100%;
+}
+
+.problem-input {
+    resize: none;
+}
+
+.get-in-touch-button {
+    color: white;
+    background-color: rgb(255, 77, 0);
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+}

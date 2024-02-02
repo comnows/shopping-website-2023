@@ -4,6 +4,10 @@ body {
     padding-top: 65px;
 }
 
+input, textarea, button {
+    font-family: 'Akshar', sans-serif, Arial;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
