@@ -151,6 +151,8 @@ function renderProducts() {
 
     const productsData = filterProducts();
 
+    updateTargetProductsAmount(productsData.length);
+
     productsData.forEach((product) => {
         productsHTML += `
             <div class="product-preview">
@@ -175,6 +177,10 @@ function renderProducts() {
     });
 
     document.querySelector('.products-grid').innerHTML = productsHTML;
+}
+
+function updateTargetProductsAmount(targetAmount) {
+    document.querySelector('.products-target-amount').innerHTML = `${targetAmount}`;
 }
 
 addSidebarKidsLink();
